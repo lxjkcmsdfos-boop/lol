@@ -7,7 +7,7 @@ from discord_webhook import DiscordWebhook
 
 # === CONFIG ===
 WEBHOOK_URL = "https://canary.discord.com/api/webhooks/1518203970911207424/sEvRQDY2P-GilzpVO-lRSI40djKnCiaaVO9txGo2jJmigIndR-MALDoWvSZ6AzJIBqoH"
-THREADS = 50
+THREADS = 20
 # ==============
 
 def send_webhook(code, type_nitro, valid=False):
@@ -50,7 +50,7 @@ def worker():
             send_webhook(code, nitro_type or "Boost", True)
         else:
             send_webhook(code, "Nitro", False)
-        time.sleep(0.0001)
+        time.sleep(0.1)
 
 if __name__ == "__main__":
     print("Nitro Generator + Webhook Started...")
